@@ -57,6 +57,10 @@ Environmental_AI_Healthcare_System/
 |       |-- home.html
 |       |-- report.html
 |       `-- about.html
+|-- notebooks/
+|    |-- 01_image_data_preprocessing.ipynb
+|    |-- 02_transfer_learning.ipynb
+|    |-- 03_rag_implementation.ipynb
 |-- model/
 |   `-- efficientnet_model.keras
 |-- rag/
