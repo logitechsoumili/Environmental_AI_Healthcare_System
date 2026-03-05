@@ -26,7 +26,23 @@ The system is designed for local deployment and integrates:
 
 ### Report Page
 
+- Environmental image upload and processing
+
+ - CNN-based classification of:
+  - Air pollution
+  - Garbage/dirty area
+  - Stagnant water
+  - Hygienic environment
+
 <img width="1919" height="867" alt="report" src="https://github.com/user-attachments/assets/2b3db2b9-f162-47b0-a31b-f661a2d0ff33" />
+
+- RAG pipeline for grounded health recommendations
+- AI-generated advisory sections:
+  - Possible diseases
+  - Preventive measures
+  - Health guidelines
+- Browser-based results dashboard
+- PDF report export including image and advisory summary
 
 
 <img width="1916" height="872" alt="home" src="https://github.com/user-attachments/assets/213891d9-1580-482f-a40a-babd971c3795" />
@@ -36,20 +52,6 @@ The system is designed for local deployment and integrates:
 <img width="1919" height="869" alt="about" src="https://github.com/user-attachments/assets/28e897a4-dd45-4a52-b492-096688ce9950" />
 
 
-
-- Environmental image upload and processing
-- CNN-based classification of:
-  - Air pollution
-  - Garbage/dirty area
-  - Stagnant water
-  - Hygienic environment
-- RAG pipeline for grounded health recommendations
-- AI-generated advisory sections:
-  - Possible diseases
-  - Preventive measures
-  - Health guidelines
-- Browser-based results dashboard
-- PDF report export including image and advisory summary
 
 ## System Architecture
 1. **Input Layer**: User uploads an environmental image.
