@@ -25,19 +25,19 @@ The system is designed for local deployment and integrates:
 
 ### Home Page
 
-![Home Page](screenshots/home_page.png)
+![Home Page](screenshorts/home_page.png)
 
-![Home Page](screenshots/faq.png)
+![Home Page](screenshorts/faq.png)
 
 ### Report Page
 
-![Report Page](screenshots/report.png)
+![Report Page](screenshorts/report.png)
 
-![Report Page](screenshots/home.png)
+![Report Page](screenshorts/home.png)
 
 ### About Page
 
-![About Page](screenshots/about.png)
+![About Page](screenshorts/about.png)
 
 - Environmental image upload and processing
 - CNN-based classification of:
