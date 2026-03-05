@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1P83xKO-T5maU8C2ZnRI6dNnvhwIociz6/view?usp=drive_link">
-    <img alt="Watch Demo Video" src="https://img.shields.io/badge/%E2%96%B6-Watch%20Demo%20Video‑ff69b4?style=for-the-badge&logo=github&logoColor=white">
+    <img src="https://github.com/user-attachments/assets/dbd24306-1565-43e1-82b6-8d6b0a7bedad" alt="Watch Demo Video" width="700">
   </a>
 </p>
 
@@ -25,7 +25,6 @@ The system is designed for local deployment and integrates:
 
 ### Home Page
 
-
 <img width="1919" height="865" alt="home_page" src="https://github.com/user-attachments/assets/68ee9d36-882e-4557-b146-167f982faafc" />
 
 
@@ -40,8 +39,10 @@ The system is designed for local deployment and integrates:
 
 ### About Page
 
-
 <img width="1919" height="869" alt="about" src="https://github.com/user-attachments/assets/28e897a4-dd45-4a52-b492-096688ce9950" />
+
+<img width="1906" height="868" alt="about (2)" src="https://github.com/user-attachments/assets/c7e5bf08-fb31-4606-a907-fcb085c813ff" />
+
 
 - Environmental image upload and processing
 - CNN-based classification of:
