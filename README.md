@@ -27,12 +27,11 @@ The system is designed for local deployment and integrates:
 ### Report Page
 
 - Environmental image upload and processing
-
- - CNN-based classification of:
-  - Air pollution
-  - Garbage/dirty area
-  - Stagnant water
-  - Hygienic environment
+- CNN-based classification of:
+   - Air pollution
+   - Garbage/dirty area
+   - Stagnant water
+   - Hygienic environment
 
 <img width="1919" height="867" alt="report" src="https://github.com/user-attachments/assets/2b3db2b9-f162-47b0-a31b-f661a2d0ff33" />
 
