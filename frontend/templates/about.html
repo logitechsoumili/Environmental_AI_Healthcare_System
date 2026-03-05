@@ -24,15 +24,29 @@
         Environmental AI Healthcare System combines computer vision and language intelligence
         to monitor environmental conditions and provide health-focused recommendations.
       </p>
+      <p>
+        The Intelligent Environmental Health Monitoring workflow is designed to convert
+        real-world environmental observations into understandable risk insights, so users
+        can take timely preventive action before conditions become severe.
+      </p>
     </section>
 
     <section class="grid-2">
       <article class="glass card">
         <h3>Core Technologies</h3>
         <p>
-          A CNN model detects environmental classes from images. A Retrieval-Augmented Generation
-          layer provides grounded advisory responses including disease risks and preventive guidance.
+          The platform combines robust visual intelligence with context-aware language generation
+          to deliver meaningful and practical environmental health guidance.
         </p>
+        <p>
+          It is built to move from raw image input to reliable, action-focused insights that users
+          can understand quickly and apply in real-world settings.
+        </p>
+        <ul class="list">
+          <li>CNN-based image classification identifies environmental condition categories.</li>
+          <li>RAG pipeline grounds AI responses in retrieved domain-specific knowledge.</li>
+          <li>Structured output highlights likely risks, preventive measures, and guidance points.</li>
+        </ul>
       </article>
       <article class="glass card">
         <h3>Project Goal</h3>
@@ -40,6 +54,15 @@
           Improve early awareness of environment-linked health risks and support preventive action
           for communities, public health workers, and individual users.
         </p>
+        <p>
+          The goal is to make environmental health intelligence easier to access and act on,
+          especially in everyday scenarios where people need quick, understandable guidance.
+        </p>
+        <ul class="list">
+          <li>Detect environmental risk patterns from uploaded real-world images.</li>
+          <li>Translate AI predictions into practical prevention and health-safety recommendations.</li>
+          <li>Support informed decisions for households, communities, and frontline public-health teams.</li>
+        </ul>
       </article>
     </section>
 
@@ -47,16 +70,28 @@
       <h2>Why It Matters</h2>
       <p>
         Many health concerns are influenced by environmental conditions. This platform helps translate
-        visual environmental signals into understandable, practical recommendations.
+        visual environmental signals into understandable, practical recommendations. By turning image-based
+        observations into risk-aware guidance, it supports earlier awareness, better preventive behavior,
+        and more informed decisions for households, communities, and public-health responders in everyday settings.
       </p>
       <a class="btn btn-primary" href="/report">Try the Report Module</a>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-row">
-      <p>Environmental AI Healthcare System</p>
-      <p>Responsible AI for preventive healthcare</p>
+    <div class="container footer-grid">
+      <div>
+        <h4>Environmental AI Healthcare System</h4>
+        <p>Intelligent Environmental Health Monitoring for preventive, community-focused decision support.</p>
+      </div>
+      <div>
+        <h4>Our Mission</h4>
+        <p>Bridge AI and public health to improve early awareness, reduce exposure risks, and support safer habits.</p>
+      </div>
+      <div>
+        <h4>Responsible Use</h4>
+        <p>Insights are informational and should complement official health guidance and clinical consultation.</p>
+      </div>
     </div>
   </footer>
   <script src="{{ url_for('static', filename='script.js') }}"></script>

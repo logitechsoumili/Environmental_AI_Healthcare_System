@@ -135,7 +135,7 @@ function renderFollowupHistory() {
 
     const a = document.createElement("p");
     a.className = "qa-a";
-    a.appendChild(document.createTextNode(formatAnswerForHistory(item.answer)));
+    a.appendChild(document.createTextNode(formatAnswerForHistory(item.answer, item.question)));
 
     block.appendChild(q);
     block.appendChild(a);
@@ -146,13 +146,14 @@ function renderFollowupHistory() {
   if (answerBox) answerBox.hidden = true;
 }
 
-function formatAnswerForHistory(answerText) {
+function formatAnswerForHistory(answerText, askedQuestion = "") {
   const text = (answerText || "").trim();
   if (!text) return "No answer generated.";
 
   const lines = text.split(/\r?\n/);
   const cleaned = [];
   let insideAnswerBlock = false;
+  const normalizedAskedQuestion = askedQuestion.trim().toLowerCase().replace(/[?.!:\s]+$/g, "");
 
   for (const line of lines) {
     const normalized = line.trim().toLowerCase();
@@ -164,6 +165,10 @@ function formatAnswerForHistory(answerText) {
       continue;
     }
     if (!insideAnswerBlock && !line.trim().startsWith("-")) {
+      continue;
+    }
+    const normalizedLine = line.trim().toLowerCase().replace(/[?.!:\s]+$/g, "");
+    if (normalizedAskedQuestion && normalizedLine === normalizedAskedQuestion) {
       continue;
     }
     if (line.toLowerCase().includes("for your question on")) {
@@ -185,7 +190,10 @@ function resetAnalysisUI() {
   const answer = byId("answer");
   const questionInput = byId("question");
 
-  if (preview) preview.src = "";
+  if (preview) {
+    preview.src = "";
+    preview.hidden = true;
+  }
   if (predictionBadge) {
     predictionBadge.className = "badge";
     predictionBadge.textContent = "Pending";
@@ -204,6 +212,21 @@ function resetAnalysisUI() {
   if (questionInput) questionInput.value = "";
   if (resultsSection) resultsSection.hidden = true;
   if (followupSection) followupSection.hidden = true;
+}
+
+function updateUploadPreview(file) {
+  const fileNameEl = byId("selectedFileName");
+
+  if (fileNameEl) {
+    fileNameEl.textContent = file ? `Selected file: ${file.name}` : "No file selected.";
+  }
+}
+
+function handleImageInputChange() {
+  const input = byId("imageInput");
+  const file = input && input.files ? input.files[0] : null;
+  resetAnalysisUI();
+  updateUploadPreview(file || null);
 }
 
 async function analyze(event) {
@@ -233,6 +256,7 @@ async function analyze(event) {
   if (preview) {
     localPreviewUrl = URL.createObjectURL(file);
     preview.src = localPreviewUrl;
+    preview.hidden = false;
   }
 
   try {
@@ -258,6 +282,7 @@ async function analyze(event) {
 
     if (preview) {
       preview.src = `/uploads/${data.image}?t=${Date.now()}`;
+      preview.hidden = false;
     }
 
     const badge = byId("predictionBadge");
@@ -425,7 +450,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadBtn = byId("downloadBtn");
   const imageInput = byId("imageInput");
 
-  if (imageInput) imageInput.addEventListener("change", resetAnalysisUI);
+  if (imageInput) {
+    imageInput.addEventListener("change", handleImageInputChange);
+    updateUploadPreview(null);
+  }
 
   if (analyzeBtn) analyzeBtn.addEventListener("click", analyze);
   if (askBtn) askBtn.addEventListener("click", ask);

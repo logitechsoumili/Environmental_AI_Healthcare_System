@@ -19,33 +19,47 @@
 
   <main class="container">
     <section class="glass hero">
-      <p class="eyebrow">AI-Driven Environmental Medicine</p>
-      <h1>Intelligent Environmental Health Monitoring</h1>
+      <p class="eyebrow">AI-Driven Environmental Health Intelligence</p>
+      <h1>Intelligent Environmental Health Monitoring System</h1>
       <p class="lead">
         A hybrid CNN + RAG platform that detects environmental risks from images and
         generates health-focused guidance, prevention measures, and follow-up answers.
+      </p>
+      <p class="lead">
+        It helps translate complex environmental signals into clear, practical public-health
+        actions so individuals and communities can respond early, reduce exposure, and make
+        safer day-to-day decisions.
       </p>
       <a class="btn btn-primary" href="/report">Start Analysis</a>
     </section>
 
     <section class="grid-3 services">
       <article class="glass card">
-        <h3>Environmental Detection</h3>
-        <p>Computer vision classifies conditions such as air pollution, stagnant water, and hygiene level.</p>
+        <h3>Environmental Condition Detection</h3>
+        <p>
+          The CNN analyzes uploaded images to detect environmental patterns such as air pollution,
+          stagnant water zones, poor sanitation, and cleaner surroundings with confidence-aware classification.
+        </p>
       </article>
       <article class="glass card">
         <h3>Health Risk Prediction</h3>
-        <p>The model links detected conditions with likely disease patterns and practical risk interpretation.</p>
+        <p>
+          Based on the detected condition, the system maps likely health-risk pathways and highlights
+          possible disease associations to support earlier awareness and preventive decision-making.
+        </p>
       </article>
       <article class="glass card">
         <h3>Preventive Recommendations</h3>
-        <p>RAG-powered retrieval generates actionable prevention and public-health-aligned recommendations.</p>
+        <p>
+          RAG-powered retrieval generates actionable prevention strategies, hygiene and exposure-reduction steps,
+          and public-health-aligned recommendations that users can apply in day-to-day environments.
+        </p>
       </article>
     </section>
 
     <section class="glass section">
       <h2>How the CNN + RAG System Works</h2>
-      <p>
+      <p class="content-box">
         The CNN analyzes visual patterns in uploaded environmental images and predicts the
         environment class with confidence. Retrieval-Augmented Generation then grounds the
         health advisory in domain knowledge to provide diseases, preventive measures, and
@@ -58,24 +72,46 @@
       <div class="faq-list">
         <details class="glass faq-item">
           <summary>What image types are supported?</summary>
-          <p>Standard image formats like JPG, JPEG, and PNG are supported through browser upload.</p>
+          <p class="faq-answer">
+            The system supports common browser-upload formats including JPG, JPEG, and PNG.
+            For best results, use clear images with good lighting and visible environmental context.
+            Avoid very blurry, dark, or highly cropped images because they can reduce prediction quality.
+          </p>
         </details>
         <details class="glass faq-item">
           <summary>Is this a medical diagnosis tool?</summary>
-          <p>No. It provides environmental risk insights and preventive guidance, not a clinical diagnosis.</p>
+          <p class="faq-answer">
+            No, this platform is not a clinical diagnostic system and does not replace a doctor.
+            It provides risk interpretation from environmental conditions and suggests preventive actions.
+            If symptoms are serious or persistent, always consult a licensed healthcare professional.
+          </p>
         </details>
         <details class="glass faq-item">
           <summary>Can I ask follow-up questions after analysis?</summary>
-          <p>Yes. Use the report page question box to get context-aware AI answers from the detected class.</p>
+          <p class="faq-answer">
+            Yes, after analysis you can ask follow-up questions in the Report module.
+            Responses are generated using the detected environment class plus retrieved health context.
+            This helps you get more specific guidance on risks, prevention, and next practical steps.
+          </p>
         </details>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-row">
-      <p>Environmental AI Healthcare System</p>
-      <p>Built with Flask, CNN, and RAG</p>
+    <div class="container footer-grid">
+      <div>
+        <h4>Environmental AI Healthcare System</h4>
+        <p>Intelligent Environmental Health Monitoring for preventive, community-focused decision support.</p>
+      </div>
+      <div>
+        <h4>Core Stack</h4>
+        <p>Flask backend, CNN-based image classification, and RAG-powered health advisory generation.</p>
+      </div>
+      <div>
+        <h4>Use Responsibly</h4>
+        <p>This platform provides awareness guidance only and should be combined with clinical advice when needed.</p>
+      </div>
     </div>
   </footer>
   <script src="{{ url_for('static', filename='script.js') }}"></script>

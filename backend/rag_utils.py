@@ -378,14 +378,20 @@ def _normalize_followup_answer(raw_text: str, environment_class: str, question: 
     if not text:
         return _fallback_followup_answer(environment_class, question, context_chunks)
 
+    safe_question = _safe_text(question) or f"health risk in {environment_class.replace('_', ' ')}"
+    safe_question_lc = safe_question.lower().strip(" ?.!:")
+
     lines = [line.strip() for line in text.splitlines() if line.strip()]
     bullets: List[str] = []
     summary_candidate = ""
     for line in lines:
         lowered = line.lower()
+        normalized_line = line.strip(" ?.!:").lower()
         if lowered.startswith("quick summary") or lowered.startswith("action tip"):
             continue
         if lowered.startswith("question:") or lowered.startswith("answer:") or lowered.startswith("summary:"):
+            continue
+        if normalized_line == safe_question_lc:
             continue
         if line.startswith("- ") or line.startswith("* ") or line.startswith("• "):
             bullets.append(line[2:].strip())
@@ -401,6 +407,9 @@ def _normalize_followup_answer(raw_text: str, environment_class: str, question: 
     deduped: List[str] = []
     seen = set()
     for bullet in bullets:
+        bullet_norm = bullet.strip(" ?.!:").lower()
+        if bullet_norm == safe_question_lc:
+            continue
         if bullet.lower().startswith("for your question on"):
             continue
         key = bullet.lower()
@@ -413,8 +422,10 @@ def _normalize_followup_answer(raw_text: str, environment_class: str, question: 
         return _fallback_followup_answer(environment_class, question, context_chunks)
 
     deduped = deduped[:6]
-    safe_question = _safe_text(question) or f"health risk in {environment_class.replace('_', ' ')}"
     if not summary_candidate:
+        summary_candidate = deduped[0]
+    summary_norm = summary_candidate.strip(" ?.!:").lower()
+    if summary_norm == safe_question_lc:
         summary_candidate = deduped[0]
     if len(summary_candidate) > 160:
         summary_candidate = summary_candidate[:157].rstrip() + "..."

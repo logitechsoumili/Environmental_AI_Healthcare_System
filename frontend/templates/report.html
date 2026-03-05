@@ -18,41 +18,60 @@
   </header>
 
   <main class="container report-main">
-    <section class="glass section">
+    <section class="glass section report-hero">
+      <p class="eyebrow">AI-Assisted Environmental Risk Reporting</p>
       <h1>Environmental Analysis Report</h1>
-      <p>Upload an image to get AI-based environmental health insights.</p>
+      <p class="content-box report-intro">
+        Upload an environmental image to generate AI-based risk interpretation, likely health concerns,
+        preventive recommendations, and practical follow-up guidance tailored to the detected condition.
+      </p>
+      <div class="report-tips">
+        <span class="tip-pill">Clear Image Quality</span>
+        <span class="tip-pill">Good Lighting</span>
+        <span class="tip-pill">JPG, JPEG, PNG</span>
+      </div>
       <div class="upload-row">
+        <label for="imageInput" class="upload-drop">
+          <span class="upload-drop-title">Choose Environmental Image</span>
+          <span class="upload-drop-sub">Click to browse JPG, JPEG, or PNG files</span>
+        </label>
         <input type="file" id="imageInput" accept="image/*">
         <button class="btn btn-primary" id="analyzeBtn" type="button">Analyze Environment</button>
       </div>
+      <p id="selectedFileName" class="selected-file">No file selected.</p>
+      <p class="input-note">Tip: include more environmental context in the frame for better prediction quality.</p>
     </section>
 
     <section id="results" class="split" hidden>
       <div class="glass panel left-panel">
         <h3>Image & Prediction</h3>
-        <div class="preview-wrap">
-          <img id="preview" alt="Uploaded preview">
+        <div class="prediction-inner">
+          <p class="panel-note">Detected class and confidence score from the uploaded image.</p>
+          <div class="preview-wrap">
+            <img id="preview" alt="Uploaded preview">
+          </div>
+          <p class="meta-line">Prediction: <span id="predictionBadge" class="badge">Pending</span></p>
+          <p class="meta-line">Confidence: <strong id="confidence">0%</strong></p>
+          <div class="confidence-wrapper">
+            <div id="confidenceBar"></div>
+          </div>
         </div>
-        <p class="meta-line">Prediction: <span id="predictionBadge" class="badge">Pending</span></p>
-        <p class="meta-line">Confidence: <strong id="confidence">0%</strong></p>
-        
-
-  <div class="confidence-wrapper">
-    <div id="confidenceBar"></div>
-  </div>
       </div>
 
       <div class="right-panel">
         <article class="glass panel">
           <h3>Diseases</h3>
+          <p class="panel-note">Potential health concerns associated with the detected environment.</p>
           <ul id="diseases" class="list"></ul>
         </article>
         <article class="glass panel">
           <h3>Preventive Measures</h3>
+          <p class="panel-note">Actionable steps to reduce exposure and improve environmental safety.</p>
           <ul id="prevention" class="list"></ul>
         </article>
         <article class="glass panel">
           <h3>Health Guidelines</h3>
+          <p class="panel-note">General health-protection guidance aligned with public-health best practices.</p>
           <ul id="guidelines" class="list"></ul>
         </article>
       </div>
@@ -60,6 +79,7 @@
 
     <section id="followupSection" class="glass section" hidden>
       <h2>Ask Follow-up Questions</h2>
+      <p class="panel-note">Ask specific questions about the detected condition to receive contextual AI answers.</p>
       <div class="qa-row">
         <input type="text" id="question" placeholder="Ask about this environment and health risk...">
         <button class="btn btn-secondary" id="askBtn" type="button">Ask</button>
@@ -69,6 +89,23 @@
       <button class="btn btn-primary" id="downloadBtn" type="button">Download Report</button>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Environmental AI Healthcare System</h4>
+        <p>Intelligent Environmental Health Monitoring for preventive, community-focused decision support.</p>
+      </div>
+      <div>
+        <h4>Report Module</h4>
+        <p>Upload environmental images, review model confidence, and ask follow-up health-risk questions.</p>
+      </div>
+      <div>
+        <h4>Reminder</h4>
+        <p>Use AI outputs as guidance and verify critical decisions with local experts or healthcare professionals.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
