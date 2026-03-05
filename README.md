@@ -57,6 +57,12 @@ Environmental_AI_Healthcare_System/
 |       |-- home.html
 |       |-- report.html
 |       `-- about.html
+|-- screenshorts/
+|     |-- about.png
+|     |-- faq.png
+|     |-- home.png
+|     |--home_page.png
+|     |-- report.png
 |-- notebooks/
 |    |-- 01_image_data_preprocessing.ipynb
 |    |-- 02_transfer_learning.ipynb
