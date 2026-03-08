@@ -1,10 +1,5 @@
 # Environmental AI Healthcare System
 
-
-
-
- 
-
 ## Project Overview
 The **Environmental AI Healthcare System** is an AI-powered platform that analyzes environmental images and generates context-aware public health advisories. It combines computer vision and retrieval-augmented generation (RAG) to classify environmental conditions and provide actionable healthcare guidance through a web interface.
 
@@ -64,10 +59,6 @@ The system is designed for local deployment and integrates:
 ## Folder Structure
 ```text
 Environmental_AI_Healthcare_System/
-|-- Notebooks/
-|    |-- 01_image_data_preprocessing.ipynb
-|    |-- 02_transfer_learning.ipynb
-|    |-- 03_rag_implementation.ipynb
 |-- backend/
 |   |-- app.py
 |   |-- model_utils.py
@@ -82,6 +73,10 @@ Environmental_AI_Healthcare_System/
 |       `-- about.html
 |-- model/
 |   `-- efficientnet_model.keras
+|-- notebooks/
+|    |-- 01_image_data_preprocessing.ipynb
+|    |-- 02_transfer_learning.ipynb
+|    `-- 03_rag_implementation.ipynb
 |-- rag/
 |   |-- documents.pkl
 |   `-- faiss.index
