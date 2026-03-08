@@ -22,13 +22,14 @@ The home page introduces the Environmental AI Healthcare System and provides nav
 <img width="1919" height="867" alt="report" src="https://github.com/user-attachments/assets/2b3db2b9-f162-47b0-a31b-f661a2d0ff33" />
 
 The report page is the main analysis interface where users can upload or capture environmental images and receive AI-generated health advisories.
+---
 
 Key capabilities:
 
 <img width="1910" height="868" alt="Screenshot 2026-03-08 193050" src="https://github.com/user-attachments/assets/bfcc6889-8002-4eac-92f2-1ac82ff016da" />
 
 
-
+---
 - ### Image Upload Analysis
 - Upload environmental images
 - AI-based risk detection
@@ -52,6 +53,7 @@ Key capabilities:
   - Health guidelines
 - Interactive results dashboard
 - PDF report export including image and advisory summary
+  ---
 
 <img width="1916" height="872" alt="home" src="https://github.com/user-attachments/assets/213891d9-1580-482f-a40a-babd971c3795" />
 
