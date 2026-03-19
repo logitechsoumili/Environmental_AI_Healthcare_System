@@ -116,7 +116,7 @@ Environmental_AI_Healthcare_System/
 1. Clone the repository and enter the project directory:
 ```bash
 git clone https://github.com/logitechsoumili/Environmental-Disease-Risk-AI.git
-cd Environmental_AI_Healthcare_System
+cd Environmental-Disease-Risk-AI
 ```
 
 2. Create a virtual environment:
